@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 #{title}
+  p Username: #{user.username}
+  p Password: #{user.password}
+  p E-mail: #{user.email}
+    
+    form(method='POST' action=user.url + '/delete')
+      div.form-group
+        input#userid.form-control(type='hidden',name='username', required='true', value = user._id)
+
+      button.btn.btn-primary(type='submit') Delete

@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 #{title}
+  p Username: #{user.username}
+  p Password: #{user.password}
+  p E-mail: #{user.email}
+    
+    form(method='POST' action=user.url + '/update')
+      div.form-group
+      label New Username
+        input#username.form-control(type='text',name='username')
+        label New Password
+        input#password.form-control(text='password', name='password')
+        label New Email
+        input#email.form-control(text='email', name='email')
+
+      p
+
+      button.btn.btn-primary(type='submit') Update

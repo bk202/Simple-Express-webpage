@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 #{title}: #{user.username}
+  
+  p #[strong password:] #{user.password}
+  p #[strong email:] #{user.email}
+
+  hr
+
+  a(href = user.url + '/delete') Delete
+  p
+  a(href = user.url + '/update') Update Information
